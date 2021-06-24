@@ -16,11 +16,7 @@ const options = {
 const depth = 3;
 const minimumWeightMagnitude = 9;
 
-let address;
-// 'HEQLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWOR99D';
-const seed =
-'PUEOTSEITFEVEWCWBTSIZM9NKRGJEIMXTULBACGFRQK9IMGICLBKW9TTEVSDQMGWKBXPVCBMMCXWMNPDX';
-
+const seed = process.env.SEED
 
 //create hello world message to send to devnet. 
 const message = JSON.stringify({"message": "Hello world"});
