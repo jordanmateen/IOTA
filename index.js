@@ -74,9 +74,11 @@ io.on('connection', (socket)=> {
                     console.error(err)
                 });
     
-       } catch (e) {
-           console.log(error)
-           console.og('There was an error retrieving address')
+       } catch (error) {
+           const e = {
+               output: error,
+               message:'There was an error retrieving address'}
+           socket.emit('error', e)
        }
     })
 })
