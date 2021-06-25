@@ -51,7 +51,7 @@ io.on('connection', (socket)=> {
                    message:messageInTrytes
                }
            ]
-           console.log('Your Address is:- ',newAddress)
+           socket.emit('newAddress', newAddress)
            /**
             * 
             * @param {*} seed 

@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
     <script src= '/socket.io/socket.io.js'></script>
-    <script>
+    <!-- <script>
          const socket = io();
-    </script>
+    </script> -->
 </head>
 <body>
     <center>
         <h1>IOTA Fundamentals</h1>
-        <p>This page is landing point for users the enter the application.</p>
-        <p>Upon entry a connection is made through Socket IO and an IOTA address is genterated</p>
+        <p>This page is landing point for connecting to a socket to generate and IOTA address</p>
+        <br/>
+        <p id="mainText">Please wait while we are generating a payment address for you....</p>
+        <div id = "address"></div>
     </center>
+    <script src ="index.js"></script>
 </body>
 </html>
