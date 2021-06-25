@@ -14,7 +14,7 @@ const server = app.listen(PORT, ()=>{
     console.log(`Application connected on port ${PORT}....`)
 })
 
-// //setup socket
+//setup socket
 const io = socket(server)
 
 // Create an instance of the IOTA API (Node on the devnet)
