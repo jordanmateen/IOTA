@@ -1,11 +1,9 @@
 //imports
+require('dotenv').config()
 const IOTA = require('@iota/core');
 const Converter = require('@iota/converter');
 const express = require('express')
 const socket = require('socket.io')
-
-const io_client = require('socket.io-client')
-io_client('http://localhost:5645/');
 
 const app = express() 
 const PORT = 5645;
@@ -40,11 +38,9 @@ const message = JSON.stringify({"message": "Hello world"});
 const messageInTrytes = Converter.asciiToTrytes(message);
 
 
-// //execute when socket is connected 
-
+//execute when socket is connected 
 io.on('connection', (socket)=> {
     console.log('Attached to socket...',socket.id)
-    socket.send('Hello')
     //get address
     iota.getNewAddress(seed, options, (error, newAddress)=>{
        try {
@@ -55,6 +51,7 @@ io.on('connection', (socket)=> {
                    message:messageInTrytes
                }
            ]
+           console.log('Your Address is:- ',newAddress)
            /**
             * 
             * @param {*} seed 
@@ -70,9 +67,9 @@ io.on('connection', (socket)=> {
                 .then(trytes => {
                     return iota.sendTrytes(trytes, depth, minimumWeightMagnitude);  
                 })
-                .then(bundle => {
-                    console.log(bundle)
-                })
+                // .then(bundle => {
+                //     console.log(bundle)
+                // })
                 .catch(err => {
                     console.error(err)
                 });
