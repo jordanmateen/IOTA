@@ -1,3 +1,5 @@
+/*NOTE: This file uses legacy code*/
+
 //imports
 require('dotenv').config()
 const IOTA = require('@iota/core');
